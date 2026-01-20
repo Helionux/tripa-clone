@@ -1,8 +1,7 @@
 import { Bed, Camera, House, Search, UtensilsCrossed } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import caption from '../../../public/caption.jpg'
-export default function Hero() {
+export default async function Hero() {
   const subLinks = [
     {
       name: "Tout rechercher",
@@ -25,6 +24,7 @@ export default function Hero() {
       icon: <UtensilsCrossed/>
     }
   ]
+
   return (
       <section className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex flex-col flex-wrap items-center justify-center ">
@@ -47,13 +47,15 @@ export default function Hero() {
                 <button type="submit" className="bg-[#00eb5a] w-32 px-4 py-2.5 border-black border rounded-full text-[16px] text-black font-bold  mr-1.5">Search</button>
         </div>
 
-        <div className="w-full mx-auto grid grid-cols-2 gap-6 p-4 bg-[#00eb5a] rounded-2xl mt-20">
+        <div className="w-full mx-auto grid grid-cols-2  justify-center gap-6 p-4 bg-[#00eb5a] rounded-2xl mt-20">
           <div className="w-full max-w-full"> 
-            <Image src={caption} alt="Caption" width={100} height={100} className="w-full object-fit rounded-2xl"/>
+            <Image src="/caption.jpg" alt="Caption" width={500} height={500} className="w-full object-fit rounded-2xl"/>
           </div>
           
-          <div className="border items-center justify-center">
-            <h1 className="text-center text-[54px] tracking-normal leading-12 md:text-6xl md:leading-17.5 mt-15 font-semibold max-w-3xl font-lexend text-[#002b11]">Trouvez des activités selon vos envies</h1>
+          <div className="flex flex-col items-center gap-5 p-7 justify-center">
+            <h1 className="text-center text-[54px] md:text-6xl  mt-15 font-semibold max-w-3xl font-lexend items-center text-[#002b11]">Trouvez des activités selon vos envies</h1>
+            <p className="text-[22px] text-center font-normal">Parcourez plus de 400 000 experiences et reservez avec nous</p>
+            <button type="submit" className="bg-black px-4 py-2.5 border-black border rounded-full text-[16px] text-white font-bold  mr-1.5 w-fit">Reservez maintenant</button>
           </div>
         </div>
       </div>
